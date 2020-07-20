@@ -42,3 +42,6 @@ M1 = CreaMatriz(len(Valores))
 DistEU(M1, Valores)
 MuestraMatriz(M1)
 
+f = open ('Matriz.txt','w')
+f.write(str(M1))
+f.close()

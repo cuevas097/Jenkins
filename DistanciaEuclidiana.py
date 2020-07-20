@@ -1,6 +1,4 @@
-# Cuevas Salgado Carlos
-# Mineria de Datos
-# -*- coding: utf-8 -*-
+# encoding: utf-8
 import math 
 import pandas 
 
@@ -8,7 +6,6 @@ import pandas
 def CreaMatriz(n):
 	Matriz= [[0 for j in range(n)] for i in range(n)]
 	return Matriz
-print()
 
 #Algoritmo para la distancia Euclidiana			
 def DistEU(M1, val):

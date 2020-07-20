@@ -9,6 +9,7 @@ def CreaMatriz(n):
 	return Matriz
 
 #Imprimir la Matriz
+"""
 def MuestraMatriz(M1):
 	for i in range(len(M1)):
 		print('\n',i+1,"||", end=" ")
@@ -16,7 +17,7 @@ def MuestraMatriz(M1):
 			if M1[i][j] != 0.00:
 				print(M1[i][j], end=' ')
 	print()
-
+"""
 #Algoritmo para la distancia Euclidiana			
 def DistEU(M1, val):
 	for i in range(len(val)-1):
@@ -40,7 +41,6 @@ Valores = Datos[ColumnasUtiles].values
 #Llamado de las funciones
 M1 = CreaMatriz(len(Valores))
 DistEU(M1, Valores)
-MuestraMatriz(M1)
 
 f = open ('Matriz.txt','w')
 f.write(str(M1))

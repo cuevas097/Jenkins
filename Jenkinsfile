@@ -10,7 +10,9 @@ pipeline {
         }
         stage('Test') { 
             steps {
-                git poll: true, url:'https://github.com/cuevas097/Ensamblador_MIPS.git'
+                sh '''
+                python DistanciaEuclidiana.py
+                '''
             }
         }
         stage('Deploy') { 

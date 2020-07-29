@@ -1,6 +1,17 @@
 pipeline {
     agent any 
     stages {
+        
+        stage('Build') {
+            steps {
+                 echo 'Building...'
+            }
+            post {
+                 always {
+                     jiraSendBuildInfo site: 'example.atlassian.net'
+                 }
+            }
+         }
         stage('Build') { 
             steps {
                 sh '''
@@ -15,16 +26,6 @@ pipeline {
                 '''
             }
         }
-        stage('Build') {
-             steps {
-                 echo 'Building...'
-             }
-             post {
-                 always {
-                     jiraSendBuildInfo site: 'carloscuevas.atlassian.net'
-                 }
-            }
-        }
         stage('Deploy') { 
             steps {
                 sh '''
@@ -34,4 +35,3 @@ pipeline {
         }
     }
 }
-

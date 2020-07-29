@@ -15,6 +15,16 @@ pipeline {
                 '''
             }
         }
+        stage('Build') {
+             steps {
+                 echo 'Building...'
+             }
+             post {
+                 always {
+                     jiraSendBuildInfo site: 'example.atlassian.net'
+                 }
+            }
+        }
         stage('Deploy') { 
             steps {
                 sh '''
@@ -24,3 +34,4 @@ pipeline {
         }
     }
 }
+

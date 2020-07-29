@@ -1,18 +1,17 @@
 pipeline {
     agent any 
     stages {
-        
         stage('Build') {
             steps {
                  echo 'Building...'
             }
             post {
                  always {
-                     jiraSendBuildInfo site: 'example.atlassian.net'
+                     jiraSendBuildInfo site: 'carloscuevas.atlassian.net'
                  }
             }
          }
-        stage('Build') { 
+        stage('Send') { 
             steps {
                 sh '''
                     echo "Hola"
